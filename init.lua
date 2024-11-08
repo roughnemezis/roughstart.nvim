@@ -1,15 +1,8 @@
---[[
-    we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
-
---]]
-
 local home = vim.env.HOME
 vim.g.python_host_prog = home .. '/slash/apps/python_venvs/neovim/bin/python'
 vim.g.python3_host_prog = home .. '/slash/apps/python_venvs/neovim3/bin/python'
 
 local node_bin = '/.nvm/versions/node/v21.6.2/bin'
--- vim.g.node_host_prog = home .. node_bin .. "/node"
 vim.cmd("let $PATH = '" .. home .. node_bin .. ":' . $PATH")
 
 vim.g.mapleader = ','

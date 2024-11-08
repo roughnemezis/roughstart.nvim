@@ -8,8 +8,6 @@ local win_id = vim.api.nvim_get_current_win()
 
 vim.api.nvim_set_current_win(win_id)
 
-print("init.lua from git_log was sourced")
-
 function M.open_git_log_split()
   local work_window = vim.api.nvim_get_current_win()
   if git_log_win_id == nil or not vim.api.nvim_win_is_valid(git_log_win_id) then

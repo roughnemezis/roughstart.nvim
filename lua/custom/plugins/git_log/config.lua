@@ -1,6 +1,5 @@
 local M = {}
 
-print("Config from git_log.config.lua was sourced")
 
 function M.config()
   --   -- Define the command to call open_git_log_split
@@ -13,7 +12,6 @@ function M.config()
   --       git_log.open_git_log_split()
   --     end
   --   })
-  print("Calling config from git_log.config.lua")
 end
 
 return M
