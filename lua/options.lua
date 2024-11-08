@@ -8,6 +8,11 @@ vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
+--
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#3B4252', fg = '#5E81AC' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#3B4252' })
+vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = '#3B4252' })
+vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = '#3B4252' })
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'

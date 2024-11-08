@@ -9,7 +9,7 @@
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({
+require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
   require 'kickstart/plugins/vim-tmux-navigator',
@@ -35,4 +35,6 @@ require('lazy').setup({
   -- ce n'est pas ce qu'on veut on va loader nos 'plugins persos' explicitement sans passer par lazy
   -- (voir plus tard si les fonctionnalités d'autoreload peuvent nous faire changer d'avis)
   -- { import = 'custom.plugins' },
-})
+}
+
+-- vim: ts=2 sts=2 sw=2 et
