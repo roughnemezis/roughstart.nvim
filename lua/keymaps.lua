@@ -50,4 +50,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- ##############      OIL             ##########################
 vim.keymap.set('n', '-', '<CMD>Oil --float<CR>', { desc = 'Open parent directory' })
 
+
+
+
+-- ##############      tmux sender             ##########################
+local tmux_sender = require('custom.plugins.tmux-sender')
+vim.api.nvim_create_user_command('TmuxSendLine', tmux_sender.send_current_line_to_tmux, {})
+vim.api.nvim_create_user_command('TmuxSendSelection', tmux_sender.send_visual_selection_to_tmux, { range = true })
+
+vim.keymap.set({ 'n' }, '<C-x><C-x>', ":TmuxSendLine<CR>j",
+  { desc = 'Execute current line in tmux pane and move to next' })
+vim.keymap.set({ 'n' }, '<C-c><C-c>', ":TmuxSendLine<CR>", { desc = 'Execute current line in tmux pane' })
+vim.keymap.set({ 'v' }, '<C-x>', ":TmuxSendSelection<CR>`>", { desc = 'Execute current visual selection in tmux pane' })
+vim.keymap.set({ 'i' }, '<C-x>', "<esc>:TmuxSendLine<CR>o",
+  { desc = 'Execute current line in insert mode and goto new line' })
+vim.keymap.set({ 'i' }, '<C-c>', "<esc>:TmuxSendLine<CR>a", { desc = 'Execute current line in insert mode' })
+
+vim.keymap.set({ 'n' }, '<C-x><C-f>',
+  ":silent !tmux send-keys -t 1.2 'ipython %:p' Enter<CR>",
+  { desc = 'Execute current file in tmux pane and move to next' })
+
+
 -- vim: ts=2 sts=2 sw=2 et
