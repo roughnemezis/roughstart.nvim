@@ -12,6 +12,7 @@
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
+  require 'kickstart/plugins/iron',
   require 'kickstart/plugins/nvim-ufo',
   require 'kickstart/plugins/vim-tmux-navigator',
   require 'kickstart/plugins/gitsigns',
