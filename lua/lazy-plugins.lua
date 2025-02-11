@@ -10,6 +10,7 @@
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
+  { dir = vim.fn.stdpath 'config' .. '/lua/custom' },
   'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',

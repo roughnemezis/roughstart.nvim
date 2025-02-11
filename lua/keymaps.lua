@@ -64,21 +64,15 @@ vim.keymap.set('n', '+', '<CMD>Oil --float<CR>', { desc = 'Open parent directory
 --
 --
 vim.keymap.set({ 'n' }, '<C-x><C-s>', ':ToggleTerm direction=vertical<CR>')
+
 vim.keymap.set('v', '<C-x>', function()
-  require('toggleterm').send_lines_to_terminal('visual_lines', false, { args = vim.v.count })
+  require('custom').trim_cr_and_send_lines_to_terminal('visual_lines', false, { args = vim.v.count })
   require('toggleterm').exec_command('cmd=""', nil) -- just to be sure it's executed
 end)
 
-vim.keymap.set('v', '<C-y>', function()
-  require('toggleterm').send_lines_to_terminal('visual_selection', false, { args = vim.v.count })
-end)
-
 vim.keymap.set('n', '<C-x><C-x>', function()
+  require('custom').trim_cr_and_send_lines_to_terminal('single_line', false, { args = vim.v.count })
   require('toggleterm').send_lines_to_terminal('single_line', false, { args = vim.v.count })
 end)
-
--- Replace with these for the other two options
--- require("toggleterm").send_lines_to_terminal("visual_lines", trim_spaces, { args = vim.v.count })
--- require("toggleterm").send_lines_to_terminal("visual_selection", trim_spaces, { args = vim.v.count })
 
 -- vim: ts=2 sts=2 sw=2 et
