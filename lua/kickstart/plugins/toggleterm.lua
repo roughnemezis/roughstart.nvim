@@ -12,7 +12,6 @@ layout souhaité (horizontal, vertical, float)
 --]]
 
 return {
-  -- dir = '~/Projets/lua_plugins/plugins/toggleterm.nvim', -- notre fork (on a besoin de customiser l'envoi au REPL)
   'akinsho/toggleterm.nvim',
   opts = {
     size = function(term)

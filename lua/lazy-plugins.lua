@@ -13,10 +13,8 @@ require('lazy').setup {
   'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
-  { dir = '~/Projets/lua_plugins/plugins/markdown.nvim' },
-  { dir = '~/Projets/lua_plugins/plugins/utilities.nvim' },
-  require 'kickstart/plugins/toggleterm', -- presentement fork local
-  require 'kickstart/plugins/nvim-surround', -- presentement fork local
+  require 'kickstart/plugins/toggleterm',
+  require 'kickstart/plugins/nvim-surround',
   require 'kickstart/plugins/gruvbox',
   require 'kickstart/plugins/quarto',
   require 'kickstart/plugins/nvim-ufo',
@@ -36,7 +34,6 @@ require('lazy').setup {
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
 
   --la ligne suivante permet de traiter tous les fichiers de specs (lazy) de plugins avec lazy.
   -- c'est une alternative qui permet de ne pas lister explicitement tous les fichiers de specs comme au dessus
