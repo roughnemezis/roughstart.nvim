@@ -31,7 +31,7 @@ return {
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
     delete_to_trash = true,
     -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-    skip_confirm_for_simple_edits = false,
+    skip_confirm_for_simple_edits = true,
     -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
     -- (:help prompt_save_on_select_new_entry)
     prompt_save_on_select_new_entry = true,
@@ -74,6 +74,13 @@ return {
       ['gx'] = 'actions.open_external',
       ['g.'] = 'actions.toggle_hidden',
       ['g\\'] = 'actions.toggle_trash',
+      ['yp'] = {
+        desc = 'Copy filepath to system clipboard',
+        callback = function()
+          require('oil.actions').copy_entry_path.callback()
+          vim.fn.setreg('+', vim.fn.getreg(vim.v.register))
+        end,
+      },
     },
     -- Set to false to disable all of the above keymaps
     use_default_keymaps = false,

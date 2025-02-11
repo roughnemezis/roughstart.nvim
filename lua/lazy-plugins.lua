@@ -10,9 +10,15 @@
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
+  'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
-  require 'kickstart/plugins/iron',
+  { dir = '~/Projets/lua_plugins/plugins/markdown.nvim' },
+  { dir = '~/Projets/lua_plugins/plugins/utilities.nvim' },
+  require 'kickstart/plugins/toggleterm', -- presentement fork local
+  require 'kickstart/plugins/nvim-surround', -- presentement fork local
+  require 'kickstart/plugins/gruvbox',
+  require 'kickstart/plugins/quarto',
   require 'kickstart/plugins/nvim-ufo',
   require 'kickstart/plugins/vim-tmux-navigator',
   require 'kickstart/plugins/gitsigns',
@@ -21,7 +27,7 @@ require('lazy').setup {
   require 'kickstart/plugins/lspconfig',
   require 'kickstart/plugins/conform',
   require 'kickstart/plugins/cmp',
-  require 'kickstart/plugins/tokyonight',
+  -- require 'kickstart/plugins/tokyonight',
   require 'kickstart/plugins/todo-comments',
   require 'kickstart/plugins/mini',
   require 'kickstart/plugins/treesitter',

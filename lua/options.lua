@@ -1,14 +1,13 @@
--- [[ Setting options ]]
--- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
+--
+--
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
 --
+
 vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#3B4252', fg = '#5E81AC' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#3B4252' })
 vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = '#3B4252' })
@@ -73,5 +72,22 @@ vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+vim.g.gruvbox_underline = 0
+vim.g.gruvbox_undercurl = 0
+
+vim.diagnostic.config {
+  virtual_text = false,
+  underline = true,
+  signs = true,
+  update_in_insert = false,
+  float = {
+    focusable = false,
+    style = 'minimal',
+    border = 'rounded',
+    header = '',
+    prefix = '',
+  },
+}
 
 -- vim: ts=2 sts=2 sw=2 et
