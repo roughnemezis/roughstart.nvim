@@ -63,7 +63,8 @@ vim.keymap.set('n', '+', '<CMD>Oil --float<CR>', { desc = 'Open parent directory
 --
 --
 --
-vim.keymap.set({ 'n' }, '<C-x><C-s>', ':ToggleTerm direction=vertical<CR>')
+vim.keymap.set({ 'n' }, '<C-x><C-s>', ':ToggleTerm<CR>')
+vim.keymap.set({ 't' }, '<C-x><C-s>', '<C-\\><C-n>:ToggleTerm<CR>')
 
 vim.keymap.set('v', '<C-x>', function()
   require('custom').trim_cr_and_send_lines_to_terminal('visual_lines', false, { args = vim.v.count })
@@ -71,8 +72,17 @@ vim.keymap.set('v', '<C-x>', function()
 end)
 
 vim.keymap.set('n', '<C-x><C-x>', function()
-  require('custom').trim_cr_and_send_lines_to_terminal('single_line', false, { args = vim.v.count })
   require('toggleterm').send_lines_to_terminal('single_line', false, { args = vim.v.count })
 end)
 
+--[[ Abbréviations
+--]]
+
+-- pour insérer des blocs de code en quarto, note il faudrait le mettre dans un filetype-plugin voir :h filetype-plugin
+vim.cmd 'iabbrev py% ```{python}<CR>```<Esc>O'
+
+vim.cmd 'iabbrev bl+ ```<CR>'
+vim.cmd 'iabbrev py+ ```{python}<CR>'
+vim.cmd 'iabbrev pybl+ ```{python}<CR>```<Esc>O'
+vim.cmd 'iabbrev blpy+ ```<CR>```{python}<CR>'
 -- vim: ts=2 sts=2 sw=2 et
