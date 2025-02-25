@@ -10,8 +10,8 @@ return {
     contrast = 'hard',
     inverse = false,
   },
-  init = function()
-    vim.cmd.colorscheme 'gruvbox'
-    vim.opt.background = 'dark'
-  end,
+  -- init = function()
+  --   vim.cmd.colorscheme 'gruvbox'
+  --   vim.opt.background = 'light'
+  -- end,
 }

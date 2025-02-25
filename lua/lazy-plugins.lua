@@ -12,12 +12,14 @@
 require('lazy').setup {
   { dir = vim.fn.stdpath 'config' .. '/lua/custom' },
   'nvim-lua/plenary.nvim',
+  'rebelot/kanagawa.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
   require 'kickstart/plugins/toggleterm',
   require 'kickstart/plugins/nvim-surround',
   require 'kickstart/plugins/gruvbox',
   require 'kickstart/plugins/quarto',
+  require 'kickstart/plugins/headlines',
   require 'kickstart/plugins/nvim-ufo',
   require 'kickstart/plugins/vim-tmux-navigator',
   require 'kickstart/plugins/gitsigns',

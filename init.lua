@@ -15,4 +15,10 @@ require 'keymaps'
 require 'lazy-bootstrap'
 require 'lazy-plugins'
 
+-- quelques opérations se font logiquement après l'installation des plugins, comme le choix du colorschemes
+-- (voir comment organiser ça mieux)
+--
+--
+vim.cmd 'colorscheme kanagawa-wave'
+
 -- vim: ts=2 sts=2 sw=2 et
