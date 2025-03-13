@@ -60,11 +60,20 @@ vim.keymap.set('n', '+', '<CMD>Oil --float<CR>', { desc = 'Open parent directory
 -- vim.keymap.set({ 'i' }, '<C-y>', '<esc>:TmuxSendLine<CR>a', { desc = 'Execute current line in insert mode' })
 
 -- vim.keymap.set({ 'v' }, '<C-y>', ':TmuxSendSelection<CR>`>', { desc = 'Execute current visual selection in tmux pane' })
---
---
---
-vim.keymap.set({ 'n' }, '<C-x><C-s>', ':ToggleTerm<CR>')
-vim.keymap.set({ 't' }, '<C-x><C-s>', '<C-\\><C-n>:ToggleTerm<CR>')
+
+vim.keymap.set({ 'n' }, '<leader>xt', ':TermSelect<CR>')
+
+vim.keymap.set({ 'n' }, '<leader>xa', ':ToggleTerm direction=horizontal<CR>')
+vim.keymap.set({ 'n' }, '<leader>xb', ':2ToggleTerm direction=horizontal<CR>')
+vim.keymap.set({ 'n' }, '<leader>xc', ':3ToggleTerm direction=horizontal<CR>')
+
+vim.keymap.set({ 'n' }, '<leader>va', ':ToggleTerm direction=vertical<CR>')
+vim.keymap.set({ 'n' }, '<leader>vb', ':2ToggleTerm direction=vertical<CR>')
+vim.keymap.set({ 'n' }, '<leader>vc', ':3ToggleTerm direction=vertical<CR>')
+
+vim.keymap.set({ 'n' }, '<leader>fa', ':ToggleTerm direction=float<CR>')
+vim.keymap.set({ 'n' }, '<leader>fb', ':2ToggleTerm direction=float<CR>')
+vim.keymap.set({ 'n' }, '<leader>fc', ':3ToggleTerm direction=float<CR>')
 
 vim.keymap.set('v', '<C-x>', function()
   require('custom').trim_cr_and_send_lines_to_terminal('visual_lines', false, { args = vim.v.count })
