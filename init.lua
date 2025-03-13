@@ -21,4 +21,9 @@ require 'lazy-plugins'
 --
 vim.cmd 'colorscheme kanagawa-wave'
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'typescript',
+  command = 'setlocal shiftwidth=4 tabstop=4 expandtab',
+})
+
 -- vim: ts=2 sts=2 sw=2 et
