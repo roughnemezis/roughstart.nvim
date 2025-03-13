@@ -15,6 +15,7 @@ require('lazy').setup {
   'rebelot/kanagawa.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
+  require 'kickstart/plugins/harpoon',
   require 'kickstart/plugins/toggleterm',
   require 'kickstart/plugins/nvim-surround',
   require 'kickstart/plugins/gruvbox',
