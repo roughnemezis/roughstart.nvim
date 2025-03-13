@@ -22,6 +22,7 @@ return {
       end
     end,
     open_mapping = [[<c-\>]],
+    persist_size = false,
   },
   version = '*',
   config = true,
